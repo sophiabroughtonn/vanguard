@@ -1,7 +1,9 @@
-/* CSS BY YOUR NAME */
+/* CSS BY SOPHIA BROUGHTON */
 
 /* IMPORTED FONTS*/
-/* IMPORT "INTER" FROM GOOGLE FONTS"
+/* IMPORT "INTER" FROM GOOGLE FONTS"*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 
 /* CSS RESET */
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -63,6 +65,16 @@ table {
 }
 
 /* GLOBAL STYLES (MOBILE FIRST (SMALL) */
+body{
+    font-family: var(--font);
+    background-color: var(--white);
+}
+
+header{ 
+    background-color: var(--black);
+    color: var(--white);
+    box-shadow: 5px 5px 5px var(--blue);
+}
 
 /* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
 
@@ -74,7 +86,7 @@ table {
 }
 
 /* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
- {
+ #innovate{
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
     height: 80vh;
     display: grid;
@@ -85,9 +97,9 @@ table {
 }
 
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
- {
+ h1::before{
     content: "";
-
+    position: absolute;
     left:-.5rem;
     width: 3.75rem;
     height: 3.75rem;
@@ -113,7 +125,7 @@ table {
     background: var(--charcoal);
     border-radius: 10px;
     position: relative;
-    transition: ;
+   /* transition: ;*/
     height: 0;
 }
 /* THIS ONE IS DONE FOR YOU */
