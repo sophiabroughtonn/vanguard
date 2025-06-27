@@ -67,16 +67,154 @@ table {
 /* GLOBAL STYLES (MOBILE FIRST (SMALL) */
 body{
     font-family: var(--font);
-    background-color: var(--white);
 }
 
-header{ 
+header {
     background-color: var(--black);
+    box-shadow: 0 10px 20px var(--blue);
     color: var(--white);
-    box-shadow: 5px 5px 5px var(--blue);
+    padding: 10px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
-/* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
+h1 {
+    font-size: 1.5rem;
+    padding: 10px;
+    font-weight: bold;
+    position: absolute;
+    left: 4rem;
+    color: var(--blue);
+}
+
+nav {
+    background-color: var(--black);
+    padding: 10px;
+   
+}
+
+nav ul {
+    width: max-content;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    text-align: center;
+    max-height: 0;
+    
+
+}
+
+nav h2 {
+    visibility:hidden; 
+    height: 1px;
+}
+
+nav li a {
+    display: block;
+    font-family: var(--font);
+    font-size: 1.5rem;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--blue);
+    transition: background-color .3s ease-in;
+}
+
+nav a:hover, nav input:hover {
+    background-color: var(--blue);
+    color: var(--black);
+}
+
+nav label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 1.5rem;
+    user-select: none;
+    position: relative;
+    left: 14rem;
+
+
+}
+
+label span {
+    background-color: var(--white);
+    display: block;
+    height: .25rem;
+    position: relative;
+    transition: background-volor .3s ease-out;
+    width: 2rem;
+}
+
+label span::before, label span::after {
+    background: var(--white);
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+label span::before {
+    top: .75rem;
+}
+
+label span::after {
+    top: -.75rem;
+}
+
+input {
+    display: none;
+}
+
+input:checked ~ ul {
+    max-height:500px;
+
+}
+
+input:checked ~label span {
+    background: transparent;
+}
+
+input:checked ~ label span::before {
+    transform: rotate(-45deg);
+}
+
+input:checked ~ label span::after {
+    transform: rotate(45deg);
+}
+
+input:checked ~ label:not(.steps) span::before, input:checked ~ label:not(.steps) span::after {
+    top: 0;
+}
+
+@media screen and (min-width:600px) {
+    nav ul {
+        overflow: visible;
+        position: absolute ;
+        top: 1.5rem;
+        right: .5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    nav li a {
+        display: inline-block;
+    }
+
+    label span, input {
+        display: none;
+    }
+}
+    
+    
+    
+    /* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
 
 /* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
 .container {
@@ -94,13 +232,214 @@ header{
     text-align: center;
     padding: 1rem;
     overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font);
+    line-height: 1.5;
+ 
+}
+    
+#innovate h2 {
+    color: var(--white);
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 10px;
 }
 
+#innovate p {
+    color: var(--white);
+    padding: 10px;
+}
+
+#innovate a {
+    background-color: var(--blue);
+    display: inline-block;
+    text-decoration: none;
+    color: var(--white);
+    padding: 10px;
+    border-radius: 8px;
+    transition: all .3s ease;
+}
+
+#innovate a:hover {
+    transition: all .3s ease;
+    background-color: var(--red);
+    transform: scale(1.25);
+}
+
+#expertise h2 {
+    margin: 20px;
+    color: var(--black);
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+#expertise p {
+    color: var(--black);
+    line-height: 1.5;
+}
+
+#offers h2 {
+    margin: 20px;
+    color: var(--black);
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-left: 10px;
+}
+#offers h3 {
+    color: var(--white);
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+#offers p {
+    color: var(--white);
+    padding-top: 20px;
+}
+
+#offers .container > div {
+    background-color: var(--blue);
+    line-height: 1.5rem;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px;
+    transition: all .3s ease;
+}
+
+#offers .container > div:hover {
+    transform: translate(0,-10px);
+}
+
+#results {
+    background-color: var(--blue);
+    line-height: 1.5;
+    padding-bottom: 20px;
+}
+#results h2 {
+    margin: 20px;
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-left: 20px;
+
+}
+
+#results p {
+    color: var(--white);
+    padding-left: 20px;
+}
+
+#results h3 {
+    margin: 20px;
+    color: var(--white);
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+#offers h2, #results h2, #results h3{
+    animation: fadeIn 1s ease-in-out 2s forwards;
+}
+
+#grid table {
+    padding: 20px;
+    margin: 0 auto;
+    font-size: 1rem;
+    text-align: center;
+    color: var(--white);
+    width: 90%;
+}
+
+#grid th {
+    font-weight: bold;
+    padding: 10px;
+}
+
+#grid tr,td,th {
+    border: 1px solid var(--charcoal);
+    padding: 10px;
+}
+
+#grid tr:nth-child(odd){
+    background-color: var(--black);
+}
+
+#grid tr:nth-child(even){
+    background-color: var(--charcoal);
+}
+
+#contact {
+    background-color: var(--black);
+    color: var(--white);
+    line-height: 1.5;
+}
+
+#contact h2{
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+#contact p {
+    font-size: 1rem;
+    padding: 20px;
+}
+
+#contact input, textarea {
+    display: block;
+    background-color: var(--white);
+    padding: 20px;
+    width: 90%;
+    border: 4px solid var(--blue);
+}
+
+#contact input[type="submit"]{
+    background-color: var(--blue);
+    font-weight: bold;
+    width: 100%;
+    padding: 10px;
+    font-size: 1.25rem;
+    color: var(--white);
+    border-radius: 8px;
+    transition: all .3s ease;
+}
+
+#contact input[type="submit"]:hover {
+    transition: all .3s ease;
+    background-color: var(--red);
+    transform: scale(1.15);
+    border: none;
+}
+
+
+footer {
+    padding-top: 30px;
+    background-color: var(--black);
+    color: var(--white);
+    text-align: center;
+    line-height: 1.5;
+}
+
+footer a {
+    color: var(--blue);
+}
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
  h1::before{
     content: "";
     position: absolute;
-    left:-.5rem;
+    top: -.75rem;
+    left: -3rem;
     width: 3.75rem;
     height: 3.75rem;
     background: url('images/vanguard-logo.svg') no-repeat center/contain;
@@ -119,13 +458,14 @@ header{
     padding: 1rem;
     position: relative;
 }
+
 /* ADD ON TRANSITION ON HEIGHT */
 .bar {
     width: 50px;
     background: var(--charcoal);
     border-radius: 10px;
     position: relative;
-   /* transition: ;*/
+   transition: height 0.3s ease-in;
     height: 0;
 }
 /* THIS ONE IS DONE FOR YOU */
@@ -153,21 +493,57 @@ header{
 }
 
 
-/* MEDIA QUERIES (MEDIUM) */ 
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity:1; transform: translate(0,3px);}
+}
 
+
+/* MEDIA QUERIES (MEDIUM) */ 
+@media screen and (min-width:800px){
+    #offers > div {
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
     #results {
         grid-template-columns: 1fr 1fr;
+        padding: 10px;
+    }
+
+    #results p {
+        padding-bottom: 20px;
+        padding-left: 20px;
     }
     .results-container {
+        display: flex;
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
     }
-    .results-table {
+    #results #grid {
         width: 50%;
     }
-    .bar-chart {
+    #bar-chart {
         width: 50%;
     }
 
+    #offers h2{
+        padding-left: 30px;
+    }
+}
 
 /* MEDIA QUERIES (LARGE) */
+
+@media screen and (min-width: 1024px){
+    #contact form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+
+
+
+
